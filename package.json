@@ -4,7 +4,7 @@
   "description": "Seat Belt Controller: Simulator Application Developed by Electron",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron ."
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MrWooJ/SBC-Simulator/issues"
   },
-  "homepage": "https://github.com/MrWooJ/SBC-Simulator#readme"
+  "homepage": "https://github.com/MrWooJ/SBC-Simulator#readme",
+  "dependencies": {
+    "electron": "^1.8.4"
+  }
 }
