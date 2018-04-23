@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<title>SBC Simulator: Vehicle Setting</title>
+	<!-- Favicon-->
+	<link rel="icon" href="../node_modules/adminbsb-materialdesign/favicon.ico" type="image/x-icon">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+	<!-- Bootstrap Core Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Waves Effect Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/node-waves/waves.css" rel="stylesheet" />
+
+	<!-- Animation Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/animate-css/animate.css" rel="stylesheet" />
+
+	<!-- Morris Chart Css-->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/morrisjs/morris.css" rel="stylesheet" />
+
+	<!-- Colorpicker Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet"
+	/>
+
+	<!-- Multi Select Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/multi-select/css/multi-select.css" rel="stylesheet">
+
+	<!-- Bootstrap Spinner Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/jquery-spinner/css/bootstrap-spinner.css" rel="stylesheet">
+
+	<!-- Bootstrap Tagsinput Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css" rel="stylesheet">
+
+	<!-- Bootstrap Select Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+	<!-- noUISlider Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/nouislider/nouislider.min.css" rel="stylesheet" />
+
+	<!-- Custom Css -->
+	<link href="../node_modules/adminbsb-materialdesign/css/style.css" rel="stylesheet">
+
+	<!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+	<link href="../node_modules/adminbsb-materialdesign/css/themes/theme-cyan.css" rel="stylesheet" />
+
+	<!-- Wait Me Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/waitme/waitMe.css" rel="stylesheet" />
+
+	<!-- Sweet Alert Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+	<!-- JQuery DataTable Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css"
+	    rel="stylesheet">
+
+	<!-- Sweetalert Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+	<!-- Range Slider Css -->
+	<link href="../node_modules/adminbsb-materialdesign/plugins/ion-rangeslider/css/ion.rangeSlider.css" rel="stylesheet" />
+	<link href="../node_modules/adminbsb-materialdesign/plugins/ion-rangeslider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet"
+	/>
+
+	<link href="../css/vehicleWindow.css" rel="stylesheet">
+</head>
+
+<body class="theme-cyan">
+	<!-- Page Loader -->
+	<div class="page-loader-wrapper">
+		<div class="loader">
+			<div class="preloader">
+				<div class="spinner-layer pl-red">
+					<div class="circle-clipper left">
+						<div class="circle"></div>
+					</div>
+					<div class="circle-clipper right">
+						<div class="circle"></div>
+					</div>
+				</div>
+			</div>
+			<p>Please wait...</p>
+		</div>
+	</div>
+	<!-- #END# Page Loader -->
+	<section class="clearfix">
+		<br>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="card">
+				<div class="header" style="padding-top: 0px; padding-bottom: 15px;">
+					<div class="row clearfix">
+						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+							<h2 class="p-t-25">Vehicle Setting</h2>
+						</div>
+						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+							<ul class="nav nav-tabs tab-col-pink" role="tablist">
+								<li role="presentation" class="active col-sm-4 col-md-4 col-lg-4 col-xs-4 p-r-0 p-l-0">
+									<a href="#nav1_panel" class="text-center p-r-0 p-l-0" id="nav1" data-toggle="tab" style="font-size: 15px; padding-left: 0px; padding-right: 0px;">
+										<i class="material-icons">info_outline</i> GLOBAL
+									</a>
+								</li>
+								<li role="presentation" class="col-sm-4 col-md-4 col-lg-4 col-xs-4 p-r-0 p-l-0">
+									<a href="#nav2_panel" class="text-center p-r-0 p-l-0" id="nav2" data-toggle="tab" style="font-size: 15px; padding-left: 0px; padding-right: 0px;">
+										<i class="material-icons">add</i> ADD
+									</a>
+								</li>
+								<li role="presentation" class="col-sm-4 col-md-4 col-lg-4 col-xs-4 p-r-0 p-l-0">
+									<a href="#nav3_panel" class="text-center p-r-0 p-l-0" id="nav3" data-toggle="tab" style="font-size: 15px; padding-left: 0px; padding-right: 0px;">
+										<i class="material-icons">edit</i> EDIT
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="body tab-content sizeControl">
+					<div role="tabpanel" class="tab-pane fade in active" id="nav1_panel">
+						<div class="row clearfix">
+							<div class="col-xs-12 ol-sm-12 col-md-12 col-lg-12">
+								<div class="panel-group" id="search_accordion" role="tablist" aria-multiselectable="true">
+									<div class="panel panel-col-grey">
+										<div class="panel-heading" role="tab" id="search_heading">
+											<h4 class="panel-title">
+												<a role="button" data-toggle="collapse" data-parent="#search_accordion" href="#search_collapse" aria-expanded="false" aria-controls="search_collapse" class="collapsed">
+													<i class="material-icons">search</i>
+													Advance Search Options
+													<div style="float: right;">
+														<span class="badge bg-black">0 Filters</span>
+													</div>
+												</a>
+											</h4>
+										</div>
+										<div id="search_collapse" class="panel-collapse collapse" role="tabpanel" aria-labelledby="search_heading">
+											<div class="panel-body">
+												<div class="row clearfix">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Min Capacity</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Min_Capacity" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+															</div>
+															<div class="help-info">Between 1 to 10</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Max Capacity</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Max_Capacity" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+															</div>
+															<div class="help-info">Between 1 to 10</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Min Filled</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Min_Filled" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+															</div>
+															<div class="help-info">Between 1 to 10</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Max Filled</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Max_Filled" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+															</div>
+															<div class="help-info">Between 1 to 10</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Min Speed</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Min_Speed" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+															</div>
+															<div class="help-info">Between 1 to 10</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Max Speed</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Max_Speed" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+															</div>
+															<div class="help-info">Between 1 to 10</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Min Position</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Min_Position" type="text" class="form-control text-center" value="2" data-rule="quantity" data-min="2" data-max="95">
+															</div>
+															<div class="help-info">Between 2 to 95</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Max Position</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Max_Position" type="text" class="form-control text-center" value="2" data-rule="quantity" data-min="2" data-max="95">
+															</div>
+															<div class="help-info">Between 2 to 95</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Min Line</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Min_LineNumber" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="2">
+															</div>
+															<div class="help-info">Between 1 to 2</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Max Line</b>
+														<div class="input-group spinner" data-trigger="spinner">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<input id="Search_Max_LineNumber" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="2">
+															</div>
+															<div class="help-info">Between 1 to 2</div>
+															<span class="input-group-addon">
+																<a href="javascript:;" class="spin-up" data-spin="up">
+																	<i class="glyphicon glyphicon-chevron-up"></i>
+																</a>
+																<a href="javascript:;" class="spin-down" data-spin="down">
+																	<i class="glyphicon glyphicon-chevron-down"></i>
+																</a>
+															</span>
+														</div>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Directions</b>
+														<div class="input-group">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<select id="Edit_Direction_Select" class="selectpicker form-control show-tick" title="Choose Directions" data-live-search="true" data-selected-text-format="count" data-size="2" data-actions-box="true" multiple>
+																	<option value="RTL">Right to Left</option>
+																	<option value="LTR">Left to Right</option>
+																</select>
+															</div>
+															<div class="help-info">Choose as Many</div>
+														</div>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<b>Colors</b>
+														<div class="input-group">
+															<span class="input-group-addon">
+																<i class="material-icons">input</i>
+															</span>
+															<div class="form-line">
+																<select id="Edit_Color_Select" class="selectpicker form-control show-tick" title="Choose Colors" data-live-search="true" data-selected-text-format="count" data-size="2" data-actions-box="true" multiple>
+																	<option value="Amber">Amber</option>
+																	<option value="Black">Black</option>
+																	<option value="Blue">Blue</option>
+																	<option value="Green">Green</option>
+																	<option value="Grey">Grey</option>
+																	<option value="Red">Red</option>
+																</select>
+															</div>
+															<div class="help-info">Choose as Many</div>
+														</div>
+													</div>
+												</div>
+												<div class="row clearfix">
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<button type="button" id="Search_ClearFields_Button" class="btn bg-cyan btn-block waves-effect waves-light">Clear Fields</button>
+													</div>
+													<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+														<button type="button" id="Search_SearchVehicle_Button" class="btn bg-cyan btn-block waves-effect waves-light">Search Vehicle</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row clearfix">
+							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="body" style="overflow-x:hidden;">
+									<table class="table table-striped tablecss" id="vehicles_table">
+										<thead>
+											<tr>
+												<th class="row-1 row-identity">Identity</th>
+												<th class="row-2 row-details">Details</th>
+												<th class="row-3 row-actions">Actions</th>
+											</tr>
+										</thead>
+										<tbody>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade in" id="nav2_panel">
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Vehicle Name</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Add_VehicleName" type="text" class="form-control" dir="ltr" placeholder="Ex: My new car">
+										</div>
+										<div class="help-info">An arbitary string</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Vehicle Id</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Add_VehicleId" type="text" class="form-control" dir="ltr" placeholder="Ex: IR:11-555-B-23">
+										</div>
+										<div class="help-info">An arbitary string</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Capacity</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Add_Capacity" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+										</div>
+										<div class="help-info">Between 1 to 10</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Filled</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Add_Filled" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+										</div>
+										<div class="help-info">Between 1 to 10</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<b>Speed (Step/Sec)</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Add_Speed" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+										</div>
+										<div class="help-info">Between 1 to 10</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Line Number</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Add_LineNumber" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="2">
+										</div>
+										<div class="help-info">Between 1 to 2</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Position</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Add_Position" type="text" class="form-control text-center" value="2" data-rule="quantity" data-min="2" data-max="95">
+										</div>
+										<div class="help-info">Between 2 to 95</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Direction</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<select id="Add_Direction_Select" class="selectpicker form-control show-tick" title="Set the Direction">
+												<option value="RTL">Right to Left</option>
+												<option value="LTR">Left to Right</option>
+											</select>
+										</div>
+										<div class="help-info">Choose one</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Color</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<select id="Add_Color_Select" class="selectpicker form-control show-tick" title="Set the Color">
+												<option value="Amber">Amber</option>
+												<option value="Black">Black</option>
+												<option value="Blue">Blue</option>
+												<option value="Green">Green</option>
+												<option value="Grey">Grey</option>
+												<option value="Red">Red</option>
+											</select>
+										</div>
+										<div class="help-info">Choose one</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row clearfix">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<button type="button" id="Add_ClearFields_Button" class="btn bg-cyan btn-block waves-effect waves-light">Clear Fields</button>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+								<button type="button" id="Add_AddVehicle_Button" class="btn bg-cyan btn-block waves-effect waves-light">Add Vehicle</button>
+							</div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade in" id="nav3_panel">
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<b>Vehicle Id</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<select id="Edit_VehicleId" class="selectpicker form-control show-tick" title="Choose the vehicle to edit" data-live-search="true">
+											</select>
+										</div>
+										<div class="help-info">Choose one</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<b>Vehicle Name</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Edit_VehicleName" type="text" class="form-control" dir="ltr" placeholder="Ex: My edited car">
+										</div>
+										<div class="help-info">An arbitary string</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Capacity</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Edit_Capacity" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+										</div>
+										<div class="help-info">Between 1 to 10</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Filled</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Edit_Filled" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+										</div>
+										<div class="help-info">Between 1 to 10</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+									<b>Speed (Step/Sec)</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Edit_Speed" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+										</div>
+										<div class="help-info">Between 1 to 10</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Line Number</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Edit_LineNumber" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="2">
+										</div>
+										<div class="help-info">Between 1 to 2</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Position</b>
+									<div class="input-group spinner" data-trigger="spinner">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<input id="Edit_Position" type="text" class="form-control text-center" value="2" data-rule="quantity" data-min="2" data-max="95">
+										</div>
+										<div class="help-info">Between 2 to 95</div>
+										<span class="input-group-addon">
+											<a href="javascript:;" class="spin-up" data-spin="up">
+												<i class="glyphicon glyphicon-chevron-up"></i>
+											</a>
+											<a href="javascript:;" class="spin-down" data-spin="down">
+												<i class="glyphicon glyphicon-chevron-down"></i>
+											</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="demo-masked-input">
+							<div class="row clearfix">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Direction</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<select id="Edit_Direction_Select" class="selectpicker form-control show-tick" title="Set the Direction">
+												<option value="RTL">Right to Left</option>
+												<option value="LTR">Left to Right</option>
+											</select>
+										</div>
+										<div class="help-info">Choose one</div>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Color</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<select id="Edit_Color_Select" class="selectpicker form-control show-tick" title="Set the Color">
+												<option value="Amber">Amber</option>
+												<option value="Black">Black</option>
+												<option value="Blue">Blue</option>
+												<option value="Green">Green</option>
+												<option value="Grey">Grey</option>
+												<option value="Red">Red</option>
+											</select>
+										</div>
+										<div class="help-info">Choose one</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row clearfix">
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<button type="button" id="Edit_ClearFields_Button" class="btn bg-cyan btn-block waves-effect waves-light">Clear Fields</button>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<button type="button" id="Edit_SaveVehicle_Button" class="btn bg-cyan btn-block waves-effect waves-light">Save</button>
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+								<button type="button" id="Edit_Delete_Button" class="btn bg-cyan btn-block waves-effect waves-light">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script>
+		window.$ = window.jQuery = require('jquery')
+	</script>
+
+	<!-- Jquery Core Js -->
+	<script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+	<!-- Bootstrap Core Js -->
+	<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+	<!-- Select Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+	<!-- Slimscroll Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+	<!-- Waves Effect Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/node-waves/waves.js"></script>
+
+	<!-- Jquery CountTo Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-countto/jquery.countTo.js"></script>
+
+	<!-- Morris Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/raphael/raphael.min.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/morrisjs/morris.js"></script>
+
+	<!-- ChartJs -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/chartjs/Chart.bundle.js"></script>
+
+	<!-- Flot Charts Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/flot-charts/jquery.flot.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/flot-charts/jquery.flot.resize.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/flot-charts/jquery.flot.pie.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/flot-charts/jquery.flot.categories.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/flot-charts/jquery.flot.time.js"></script>
+
+	<!-- Sparkline Chart Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-sparkline/jquery.sparkline.js"></script>
+
+	<!-- Select Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+	<!-- Bootstrap Colorpicker Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+
+	<!-- Input Mask Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-inputmask/jquery.inputmask.bundle.js"></script>
+
+	<!-- Multi Select Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/multi-select/js/jquery.multi-select.js"></script>
+
+	<!-- Jquery Spinner Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-spinner/js/jquery.spinner.js"></script>
+
+	<!-- Bootstrap Tags Input Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+
+	<!-- noUISlider Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/nouislider/nouislider.js"></script>
+
+	<!-- Autosize Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/autosize/autosize.js"></script>
+
+	<!-- Moment Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/momentjs/moment.js"></script>
+
+	<!-- Jquery Validation Plugin Css -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-validation/jquery.validate.js"></script>
+
+	<!-- JQuery Steps Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-steps/jquery.steps.js"></script>
+
+	<!-- Sweet Alert Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/sweetalert/sweetalert.min.js"></script>
+
+	<!-- Jquery DataTable Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/jquery.dataTables.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+	<!-- Bootstrap Notify Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+	<!-- RangeSlider Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/ion-rangeslider/js/ion.rangeSlider.js"></script>
+
+	<!-- Wait Me Plugin Js -->
+	<script src="../node_modules/adminbsb-materialdesign/plugins/waitme/waitMe.js"></script>
+
+	<!-- Custom Js -->
+	<script src="../js/vehicleWindow.js"></script>
+	<script src="../node_modules/adminbsb-materialdesign/js/admin.js"></script>
+
+	<!-- Demo Js -->
+	<script src="../node_modules/adminbsb-materialdesign/js/demo.js"></script>
+</body>
+
+</html>
