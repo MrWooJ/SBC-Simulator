@@ -1,0 +1,24 @@
+.tablecss {
+  table-layout: fixed;
+  width: 100%;
+  white-space: nowrap;
+}
+.row-identity {
+  width: 40%;
+}
+.row-details {
+  width: 30%;
+}
+.row-actions {
+  width: 30%;
+}
+.tablecss td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.tablecss td,
+.tablecss th {
+  text-align: center;
+  padding: 10px 10px;
+}
