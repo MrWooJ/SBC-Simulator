@@ -74,6 +74,7 @@
 <body class="theme-cyan">
 	<!-- Page Loader -->
 	<div class="page-loader-wrapper">
+		<div id="rainbow-progress-bar1" class="rainbow-progress-bar"></div>
 		<div class="loader">
 			<div class="preloader">
 				<div class="spinner-layer pl-red">
@@ -93,13 +94,14 @@
 		<br>
 		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			<div class="card">
+				<div class="cardRainbow rainbow-progress-bar"></div>
 				<div class="header" style="padding-top: 0px; padding-bottom: 15px;">
 					<div class="row clearfix">
 						<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 							<h2 class="p-t-25">Vehicle Setting</h2>
 						</div>
 						<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-							<ul class="nav nav-tabs tab-col-pink" role="tablist">
+							<ul class="nav nav-tabs tab-col-pink m-t-5" role="tablist">
 								<li role="presentation" class="active col-sm-4 col-md-4 col-lg-4 col-xs-4 p-r-0 p-l-0">
 									<a href="#nav1_panel" class="text-center p-r-0 p-l-0" id="nav1" data-toggle="tab" style="font-size: 15px; padding-left: 0px; padding-right: 0px;">
 										<i class="material-icons">info_outline</i> GLOBAL
@@ -166,7 +168,7 @@
 																<i class="material-icons">input</i>
 															</span>
 															<div class="form-line">
-																<input id="Search_Max_Capacity" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+																<input id="Search_Max_Capacity" type="text" class="form-control text-center" value="10" data-rule="quantity" data-min="1" data-max="10">
 															</div>
 															<div class="help-info">Between 1 to 10</div>
 															<span class="input-group-addon">
@@ -208,7 +210,7 @@
 																<i class="material-icons">input</i>
 															</span>
 															<div class="form-line">
-																<input id="Search_Max_Filled" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+																<input id="Search_Max_Filled" type="text" class="form-control text-center" value="10" data-rule="quantity" data-min="1" data-max="10">
 															</div>
 															<div class="help-info">Between 1 to 10</div>
 															<span class="input-group-addon">
@@ -250,7 +252,7 @@
 																<i class="material-icons">input</i>
 															</span>
 															<div class="form-line">
-																<input id="Search_Max_Speed" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="10">
+																<input id="Search_Max_Speed" type="text" class="form-control text-center" value="10" data-rule="quantity" data-min="1" data-max="10">
 															</div>
 															<div class="help-info">Between 1 to 10</div>
 															<span class="input-group-addon">
@@ -292,7 +294,7 @@
 																<i class="material-icons">input</i>
 															</span>
 															<div class="form-line">
-																<input id="Search_Max_Position" type="text" class="form-control text-center" value="2" data-rule="quantity" data-min="2" data-max="95">
+																<input id="Search_Max_Position" type="text" class="form-control text-center" value="95" data-rule="quantity" data-min="2" data-max="95">
 															</div>
 															<div class="help-info">Between 2 to 95</div>
 															<span class="input-group-addon">
@@ -334,7 +336,7 @@
 																<i class="material-icons">input</i>
 															</span>
 															<div class="form-line">
-																<input id="Search_Max_LineNumber" type="text" class="form-control text-center" value="1" data-rule="quantity" data-min="1" data-max="2">
+																<input id="Search_Max_LineNumber" type="text" class="form-control text-center" value="2" data-rule="quantity" data-min="1" data-max="2">
 															</div>
 															<div class="help-info">Between 1 to 2</div>
 															<span class="input-group-addon">
@@ -356,7 +358,7 @@
 																<i class="material-icons">input</i>
 															</span>
 															<div class="form-line">
-																<select id="Edit_Direction_Select" class="selectpicker form-control show-tick" title="Choose Directions" data-live-search="true" data-selected-text-format="count" data-size="2" data-actions-box="true" multiple>
+																<select id="Search_Direction_Select" class="selectpicker form-control show-tick" title="Choose Directions" data-live-search="true" data-selected-text-format="count" data-size="2" data-actions-box="true" multiple>
 																	<option value="RTL">Right to Left</option>
 																	<option value="LTR">Left to Right</option>
 																</select>
@@ -371,7 +373,7 @@
 																<i class="material-icons">input</i>
 															</span>
 															<div class="form-line">
-																<select id="Edit_Color_Select" class="selectpicker form-control show-tick" title="Choose Colors" data-live-search="true" data-selected-text-format="count" data-size="2" data-actions-box="true" multiple>
+																<select id="Search_Color_Select" class="selectpicker form-control show-tick" title="Choose Colors" data-live-search="true" data-selected-text-format="count" data-size="2" data-actions-box="true" multiple>
 																	<option value="Amber">Amber</option>
 																	<option value="Black">Black</option>
 																	<option value="Blue">Blue</option>
@@ -432,13 +434,13 @@
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-									<b>Vehicle Id</b>
+									<b>Vehicle Plaque</b>
 									<div class="input-group">
 										<span class="input-group-addon">
 											<i class="material-icons">input</i>
 										</span>
 										<div class="form-line">
-											<input id="Add_VehicleId" type="text" class="form-control" dir="ltr" placeholder="Ex: IR:11-555-B-23">
+											<input id="Add_VehiclePlaque" type="text" class="form-control" dir="ltr" placeholder="Ex: IR:11-555-B-23">
 										</div>
 										<div class="help-info">An arbitary string</div>
 									</div>
@@ -491,7 +493,7 @@
 						</div>
 						<div class="demo-masked-input">
 							<div class="row clearfix">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 									<b>Speed (Step/Sec)</b>
 									<div class="input-group spinner" data-trigger="spinner">
 										<span class="input-group-addon">
@@ -509,6 +511,21 @@
 												<i class="glyphicon glyphicon-chevron-down"></i>
 											</a>
 										</span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Speed Type</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<select id="Add_SpeedType_Select" class="selectpicker form-control show-tick" title="Set the Speed Type">
+												<option value="Constant">Constant</option>
+												<option value="Variable">Variable</option>
+											</select>
+										</div>
+										<div class="help-info">Choose one</div>
 									</div>
 								</div>
 							</div>
@@ -614,7 +631,7 @@
 											<i class="material-icons">input</i>
 										</span>
 										<div class="form-line">
-											<select id="Edit_VehicleId" class="selectpicker form-control show-tick" title="Choose the vehicle to edit" data-live-search="true">
+											<select id="Edit_VehicleId_Select" class="selectpicker form-control show-tick" title="Choose the vehicle to edit" data-live-search="true">
 											</select>
 										</div>
 										<div class="help-info">Choose one</div>
@@ -684,7 +701,7 @@
 						</div>
 						<div class="demo-masked-input">
 							<div class="row clearfix">
-								<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
 									<b>Speed (Step/Sec)</b>
 									<div class="input-group spinner" data-trigger="spinner">
 										<span class="input-group-addon">
@@ -702,6 +719,21 @@
 												<i class="glyphicon glyphicon-chevron-down"></i>
 											</a>
 										</span>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+									<b>Speed Type</b>
+									<div class="input-group">
+										<span class="input-group-addon">
+											<i class="material-icons">input</i>
+										</span>
+										<div class="form-line">
+											<select id="Edit_SpeedType_Select" class="selectpicker form-control show-tick" title="Set the Speed Type">
+												<option value="Constant">Constant</option>
+												<option value="Variable">Variable</option>
+											</select>
+										</div>
+										<div class="help-info">Choose one</div>
 									</div>
 								</div>
 							</div>
