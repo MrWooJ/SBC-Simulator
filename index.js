@@ -10,7 +10,8 @@ let mainWindow
 let vehicleWindow
 
 app.on('ready', function(){
-  PrepareVehicleWindow()
+  PrepareMainWindoe()
+  // PrepareVehicleWindow()
 })
 
 
@@ -28,25 +29,25 @@ function PrepareVehicleWindow() {
   })
 }
 
-ipcMain.on('VEHICLE_FETCH_REQ', function (e) {
-  vehicleWindow.webContents.send('TranslatedCode', output)
-})
+// ipcMain.on('VEHICLE_FETCH_REQ', function (e) {
+//   vehicleWindow.webContents.send('TranslatedCode', output)
+// })
 
-ipcMain.on('VEHICLE_SEARCH_REQ', function (e, filter) {
-  vehicleWindow.webContents.send('TranslatedCode', output)
-})
+// ipcMain.on('VEHICLE_SEARCH_REQ', function (e, filter) {
+//   vehicleWindow.webContents.send('TranslatedCode', output)
+// })
 
-ipcMain.on('VEHICLE_DELETE_REQ', function (e, vehicleId) {
-  vehicleWindow.webContents.send('TranslatedCode', output)
-})
+// ipcMain.on('VEHICLE_DELETE_REQ', function (e, vehicleId) {
+//   vehicleWindow.webContents.send('TranslatedCode', output)
+// })
 
-ipcMain.on('VEHICLE_ADD_REQ', function (e, vehicleModel) {
-  vehicleWindow.webContents.send('TranslatedCode', output)
-})
+// ipcMain.on('VEHICLE_ADD_REQ', function (e, vehicleModel) {
+//   vehicleWindow.webContents.send('TranslatedCode', output)
+// })
 
-ipcMain.on('VEHICLE_EDIT_REQ', function (e, vehicleModel) {
-  vehicleWindow.webContents.send('TranslatedCode', output)
-})
+// ipcMain.on('VEHICLE_EDIT_REQ', function (e, vehicleModel) {
+//   vehicleWindow.webContents.send('TranslatedCode', output)
+// })
 
 
 function PrepareMainWindoe() {
